@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phone Management Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-card">
+    <h1>📱 Phone Management Dashboard</h1>
+    <div class="controls">
+      <button id="addPhoneBtn" class="btn primary">Add Phone</button>
+    </div>
+    <table id="phonesTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Model</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <!-- Modal for Add/Edit -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2 id="modalTitle">Add Phone</h2>
+      <form id="phoneForm">
+        <input type="hidden" id="phoneId" />
+        <label>Name:<input type="text" id="phoneName" required /></label>
+        <label>Model:<input type="text" id="phoneModel" required /></label>
+        <label>Status:
+          <select id="phoneStatus">
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+        </label>
+        <button type="submit" class="btn primary">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
